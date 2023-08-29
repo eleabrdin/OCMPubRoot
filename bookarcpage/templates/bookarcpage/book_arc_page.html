@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+
+<p><a href="{{ page.get_parent.url }}">Series Page</a></p>
+
+  <h1>{{ page.title }}</h1>
+
+  <div class="content-container">{{ page.intro }}</div>
+
+  <h2>Announcements</h2>
+  <div class="content-container">{{ page.announcements|richtext }}</div>
+
+  <h2>Summary</h2>
+  <div class="content-container">{{ page.summary|richtext }}</div>
+
+  <h2>Chapters</h2>
+  {% for chapter in chapters %}
+      <div class="content-container">
+          <h3><a class="round-button-link" href="{% pageurl chapter %}">{{ chapter.chapter_title }}</a></h3>
+      </div>
+  {% endfor %}
+
+{% endblock %}

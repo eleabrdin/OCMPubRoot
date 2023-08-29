@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+    <p><a href="{{ page.get_parent.url }}">Author Page</a></p>
+
+    <h1>{{ page.title }}</h1>
+
+    <h2 class="section-banner">Current Information</h2>
+    <div class="content-container">
+        {{ page.current_info|richtext }}
+    </div>
+
+    <h2 class="section-banner">Books</h2>
+    {% for book in books %}
+        <div class="content-container">
+            <h3><a class="round-button-link" href="{% pageurl book %}">{{ book.book_title }}</a></h3>
+            <p>{{ book.description }}</p>
+        </div>
+    {% empty %}
+        <p class="content-container">No books available.</p>
+    {% endfor %}
+{% endblock %}

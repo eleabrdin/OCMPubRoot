@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block content %}
+            <h1>{{ page.title }}</h1>
+            <div class="content-container">
+                {{ page.body|richtext }}
+            </div>
+
+            <h2>Announcements:</h2>
+            <div class="content-container">
+                {{ page.announcement|richtext }}
+            </div>
+
+            <h2>Current Publications:</h2>
+            <ul>
+                {% for chooser in page.bookarcpages.all %}
+                <li>
+                    <a class="round-button-link" href="{% pageurl chooser.bookarcpage %}">{{ chooser.bookarcpage.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <h2>All Book Series:</h2>
+            <ul>
+                {% for chooser in page.seriespages.all %}
+                <li>
+                    <a class="round-button-link" href="{% pageurl chooser.series %}">{{ chooser.series.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <h2>All Authors:</h2>
+            <ul>
+                {% for author in page.get_authors %}
+                <li>
+                    <a class="round-button-link" href="{% pageurl author %}">{{ author.title }}</a>  <!-- This creates a link to each author's page -->
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

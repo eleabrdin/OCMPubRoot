@@ -1,0 +1,178 @@
+body, ul {
+    padding: 0;
+    margin: 0;
+}
+
+.content-container {
+    width: 100%;
+}
+
+.app-button {
+    background-color: #f08080;
+    color: #333333;
+    font-size: 2rem;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem; 
+    padding: 10px 20px;
+}
+
+.app-button:hover {
+    background-color: #ffc300;
+}
+
+ul {
+    list-style-type: none; 
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+li {
+    margin-bottom: 1rem; 
+}
+
+.nav-button {
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333333;
+    background-color: #f08080;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #ffc300;
+}
+
+h2 {
+    background-color: #52b69ae4;
+    color: #ffffff;
+    font-size: 1.3rem;
+    padding: 10px;
+    text-align: left;
+    margin: 0;
+    width: 100%;
+}
+
+.round-button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 2px solid #f08080;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333333; /* You can adjust this color as you see fit */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.round-button-link:hover {
+    background-color: #f08080;
+    color: #ffffff;
+}
+
+.content-container {
+    margin-bottom: 2em;
+}
+
+.buttonNav {
+    display: inline-block;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    background-color: #333;
+    position: relative;
+    border: none;
+}
+
+.buttonNav:hover {
+    text-decoration: underline overline;
+}
+
+.button-table-of-contents {
+    /* Create a square shape */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); 
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.button-previous-chapter {
+    /* Create a left-pointing arrow shape */
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+    padding-right: 5px;
+    padding-left: 25px;
+}
+
+.button-next-chapter {
+    /* Create a right-pointing arrow shape */
+    clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%);
+    padding-right: 25px;
+    padding-left: 5px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.linktreebutton {
+    font-size: 1rem; /* Adjust this value as needed to make the buttons smaller */
+    padding: 3px 6px; /* Adjust these values as needed */
+    text-decoration: none;
+    color: #333333;
+    background-color: #f08080;
+    border: none;
+    border-radius: 5px;
+    display: block; /* Makes the link take the full width of the parent container, making the whole area clickable */
+    margin-bottom: 0.5rem; /* Adjust this value as needed for space between buttons */
+    width: 300px; /* Set the width of the button */
+    text-align: center; /* Center the text inside the button */
+}
+
+.linktreebutton:hover {
+    background-color: #ffc300; /* On hover, keep the background color the same */
+}
+
+.linktreeul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; /* Remove bullet points from the list */
+}
+
+li.linktreeli {
+    margin-bottom: 1rem; /* Adjust as necessary for space between buttons */
+}
+
+
+@media (min-width: 600px) { 
+    .app-button {
+        width: auto;
+        margin-right: 20px;
+    }
+
+    ul.topmenu {
+        flex-direction: row; 
+        align-items: center;
+    }
+
+    li {
+        margin-bottom: 0; 
+    }
+}
+
+
+
+
+
+
+
+
+@media (min-width: 1000px) {
+    .content-container {
+        max-width: 900px;
+        margin: auto;
+    }
+}

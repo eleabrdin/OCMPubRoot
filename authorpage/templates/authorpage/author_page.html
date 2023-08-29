@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block body_class %}template-authorpage{% endblock %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+    <div class="content-container">
+        {{ page.bio|richtext }}
+    </div>
+
+    <h2>Announcements</h1>
+    <div class="content-container">
+        {{ page.announcements|richtext }}
+    </div>
+
+    <h2>Series by this author:</h2>
+    <div class="content-container">
+        {% for series in series %}
+            <div>
+                <h3><a class="round-button-link" href="{{ series.url }}">{{ series.title }}</a></h3>
+                <p>{{ series.description|richtext }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

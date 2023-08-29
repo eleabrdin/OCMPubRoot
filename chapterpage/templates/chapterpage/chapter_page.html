@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block content %}
+
+
+
+    <h1>{{ page.chapter_title }}</h1>
+
+    {% if page.previous_chapter %}
+        <a class="buttonNav button-previous-chapter" href="{% pageurl page.previous_chapter %}">Previous Chapter</a>
+    {% endif %}
+    <a class="buttonNav button-table-of-contents" href="{{ page.get_parent.url }}">Table of Contents</a>
+    {% if page.next_chapter %}
+        <a class="buttonNav button-next-chapter"  href="{% pageurl page.next_chapter %}">Next Chapter</a>
+    {% endif %}
+
+
+    <div class="content-container">{{ page.chapter_content|richtext }}</div>
+
+    
+    {% if page.previous_chapter %}
+        <a class="buttonNav button-previous-chapter" href="{% pageurl page.previous_chapter %}">Previous Chapter</a>
+    {% endif %}
+    <a class="buttonNav button-table-of-contents" href="{{ page.get_parent.url }}">Table of Contents</a>
+    {% if page.next_chapter %}
+        <a class="buttonNav button-next-chapter"  href="{% pageurl page.next_chapter %}">Next Chapter</a>
+    {% endif %}
+
+{% endblock %}
